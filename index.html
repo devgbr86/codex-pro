@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>orange-codex</title>
+  <link rel="icon" href="orange_cube.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+
+  <div id="drag-overlay">Drop .md file here</div>
+
+  <div id="app">
+
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div id="sidebar-header">
+        <span class="logo"><img style="width: 35px; height: 35px; border-radius: 50%;" src="orange_cube.png"></span>
+        <button id="open-btn" title="Open file">open</button>
+      </div>
+      <div id="file-info">no file open</div>
+      <nav id="toc-container">
+        <span class="toc-empty">—</span>
+      </nav>
+    </aside>
+
+    <!-- Main -->
+    <div id="main">
+
+      <div id="toolbar">
+        <button class="tool-btn" id="toggle-sidebar" title="Toggle sidebar">☰</button>
+        <div class="tool-sep"></div>
+        <span id="doc-title"></span>
+        <span id="reading-time"></span>
+      </div>
+
+      <div id="viewer">
+        <div id="content">
+          <div id="empty-state">
+            <div class="empty-icon">◈</div>
+            <div class="empty-title">Markdown Viewer</div>
+            <div class="empty-sub">Open a .md file or drag it here.</div>
+            <button class="empty-open-btn" id="empty-open-btn">Open file</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="statusbar">
+        <span id="status-words">—</span>
+        <span id="status-lines">—</span>
+        <span id="status-pos">—</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Hidden file input -->
+  <input type="file" id="file-input" accept=".md,.markdown,.txt" style="display:none" />
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>
